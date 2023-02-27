@@ -11,13 +11,10 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('classes', function (Blueprint $table) {
+        Schema::create('likes', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
-            $table->string('teacher');
-            $table->integer('average_review')->nullable();
-            $table->integer('like_count')->default(0);
-            $table->string('faculty');
+            $table->integer('user_id');
+            $table->integer('evaluation_id');
             $table->timestamps();
         });
     }
@@ -27,6 +24,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('classes');
+        Schema::dropIfExists('likes');
     }
 };
