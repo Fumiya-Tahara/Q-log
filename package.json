@@ -11,14 +11,13 @@
         "bootstrap": "^5.2.3",
         "laravel-vite-plugin": "^0.7.2",
         "sass": "^1.56.1",
-<<<<<<< HEAD
+
         "vite": "^4.0.0"
     },
     "dependencies": {
-        "create-vite": "^4.1.0"
-=======
+        "create-vite": "^4.1.0",
+
         "vite": "^4.0.0",
         "vue": "^3.2.37"
->>>>>>> 02a6b69e6f27894eeacf32e378f06c30e542d6e1
     }
 }
