@@ -20,5 +20,19 @@ class evaluationsSeeder extends Seeder
             'user_id' => '1',
             'review' => '3'
         ]);
+
+        Evaluation::create([
+            'sentence' => 'bbbbb',
+            'class_id' => '1',
+            'user_id' => '2',
+            'review' => '1'
+        ]);
+
+        Evaluation::create([
+            'sentence' => 'ccccc',
+            'class_id' => '2',
+            'user_id' => '3',
+            'review' => '4'
+        ]);
     }
 }
