@@ -49,22 +49,31 @@
                                 </li>
                             @endif
                         @else
-                            <li class="nav-item">
-                                <a class="nav-link">授業一覧</a>
+                            <li class="nav-item my-auto">
+                                <a class="nav-link" href="#">授業一覧</a>
                             </li>
-                            <li class="nav-item">
-                                <a class="nav-link">新規授業登録</a>
+                            <li class="nav-item my-auto">
+                                <a class="nav-link" href="#">新規授業登録</a>
                             </li>
                             <li class="nav-item dropdown">
-                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                {{-- <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                     {{ Auth::user()->name }}
+                                </a> --}}
+                                <a id="navbarDropdown" class="nav-link" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                    {{-- プロフィールアイコン画像の表示 --}}
+                                    @if (Auth::user()->icon)
+                                        <img src={{ url(Auth::user()->icon) }} alt="profile icon" class="rounded-circle mx-1">
+                                    @else
+                                        <img src={{ url('storage/images/profiles/blank-profile-picture-gbf03f3328_640.png') }} alt="profile icon" class="rounded-circle" style="width: 32px;">
+                                    @endif
                                 </a>
 
                                 <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                                    <a class="dropdown-item" href="#">ユーザー設定</a>
                                     <a class="dropdown-item" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
-                                        {{ __('Logout') }}
+                                        {{ __('ログアウト') }}
                                     </a>
 
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
