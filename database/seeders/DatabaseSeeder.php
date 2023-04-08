@@ -18,11 +18,19 @@ class DatabaseSeeder extends Seeder
         // \App\Models\User::factory()->create([
         //     'name' => 'Test User',
         //     'email' => 'test@example.com',
+<<<<<<< HEAD
 
         // ]);    
         $this->call(CoursesSeeder::class);
         $this->call(UsersSeeder::class);
         $this->call(evaluationsSeeder::class);
     
+=======
+        // ]);    
+        $this->call(CoursesSeeder::class);
+        $this->call(evaluationsSeeder::class);
+        $this->call(UsersSeeder::class);
+            
+>>>>>>> yoshida
     }
 }
