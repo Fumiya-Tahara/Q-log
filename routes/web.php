@@ -24,6 +24,5 @@ Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-Route::get('/courses', function () {
-    return view('courses');
-});
+Route::get('/courses', [PostController::class, 'index'])
+    ->name('posts.index');
