@@ -1,9 +1,6 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\CourseRegisterController;
-use App\Http\Controllers\UserInfoController;
-use App\Http\Controllers\EditUserInfoController;
 
 /*
 |--------------------------------------------------------------------------
@@ -26,13 +23,3 @@ Route::get('/bootstrap', function () {
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-
-Route::get('/course_register', [CourseRegisterController::class, 'index']);
-
-Route::post('/course_post', [CourseRegisterController::class, 'create']);
-
-Route::get('/users_edit', [EditUserInfoController::class, 'index']);
-
-Route::put('/users_update', [EditUserInfoController::class, 'edit']);
-
-Route::get('/user_info', [UserInfoController::class, 'profile']);
