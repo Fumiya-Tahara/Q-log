@@ -7,27 +7,27 @@
         <tbody>
             <tr>
                 <th scope="row">ユーザー名</th>
-                <td></td>
+                <td>{{ $name }}</td>
             </tr>
             <tr>
                 <th scope="row">メールアドレス</th>
-                <td></td>
+                <td>{{ $mail }}</td>
             </tr>
             <tr>
                 <th scope="row">学年</th>
-                <td></td>
+                <td>{{ $grade }}</td>
             </tr>
             <tr>
                 <th scope="row">学部・専攻</th>
-                <td></td>
+                <td>{{ $faculty }}</td>
             </tr>
             <tr>
                 <th scope="row">アイコン</th>
-                <td></td>
+                <td>{{ $icon }}</td>
             </tr>
             <tr>
                 <th scope="row">free text</th>
-                <td></td>
+                <td>{{ $text }}</td>
             </tr>
         </tbody>
     </table>

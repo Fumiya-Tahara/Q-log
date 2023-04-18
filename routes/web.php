@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CourseRegisterController;
+use App\Http\Controllers\UserInfoController;
+use App\Http\Controllers\EditUserInfoController;
 
 /*
 |--------------------------------------------------------------------------
@@ -27,12 +29,10 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 
 Route::get('/course_register', [CourseRegisterController::class, 'index']);
 
-Route::post('/register', [CourseRegisterController::class, 'create']);
+Route::post('/course_post', [CourseRegisterController::class, 'create']);
 
-Route::get('/edit_user_info', function () {
-    return view('edit_user_info');
-});
+Route::get('/users_edit', [EditUserInfoController::class, 'index']);
 
-Route::get('/user_info', function () {
-    return view('user_info');
-});
+Route::put('/users_update', [EditUserInfoController::class, 'edit']);
+
+Route::get('/user_info', [UserInfoController::class, 'profile']);

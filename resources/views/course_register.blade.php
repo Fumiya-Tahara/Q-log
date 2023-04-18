@@ -17,7 +17,7 @@
             </ul>
         </div>
     @endif
-    <form action="{{ url('/register') }}" method="POST">
+    <form action="{{ url('/course_post') }}" method="POST">
         @csrf
         <table class="table table-bordered">
             <tbody>

@@ -3,53 +3,55 @@
 @section('content')
 <div class="container">
     <h3>ユーザー情報編集</h3>
-    <form>
+    <form action="{{ url('/users_update'), $user->user }}" method="POST">
+        @csrf
+        <input type="hidden" name="_method" value="PUT">
         <table class="table table-bordered">
             <tbody>
                 <tr>
                     <th scope="row">ユーザー名</th>
                     <td>
-                        <input type="text" class="form-control" value="" required>
+                        <input name="name" type="text" class="form-control" value="{{ $user->name }}" required>
                     </td>
                 </tr>
                 <tr>
                     <th scope="row">メールアドレス</th>
-                    <td></td>
+                    <td>{{ $user->email }}</td>
                 </tr>
-                <tr>
+                {{-- <tr>
                     <th scope="row">パスワード</th>
                     <td>
-                        <input type="password" class="form-control" value="" required>
+                        <input type="password" class="form-control" value="{{ $user->password }}" required>
                     </td>
                 </tr>
                 <tr>
                     <th scope="row">パスワード （確認用）</th>
                     <td>
-                        <input type="password" class="form-control" value="" required>
+                        <input type="password" class="form-control" value="{{ $user->password }}" required>
                     </td>
-                </tr>
+                </tr> --}}
                 <tr>
                     <th scope="row">学年</th>
                     <td>
-                        <input type="text" class="form-control" value="">
+                        <input name="grade" type="text" class="form-control" value="{{ $user->grade }}">
                     </td>
                 </tr>
                 <tr>
                     <th scope="row">学部・専攻</th>
                     <td>
-                        <input type="text" class="form-control" value="">
-                    </td>
-                </tr>
-                <tr>
-                    <th scope="row">アイコン</th>
-                    <td>
-                        <input type="text" class="form-control" value="">
+                        <input name="faculty_and_department" type="text" class="form-control" value="{{ $user->faculty_and_department }}">
                     </td>
                 </tr>
                 <tr>
                     <th scope="row">free text</th>
                     <td>
-                        <input type="text" class="form-control" value="">
+                        <input name="free_text" type="text" class="form-control" value="{{ $user->free_text }}">
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="row">アイコン</th>
+                    <td>
+                        <input name="icon" type="text" class="form-control" value="{{ $user->icon }}">
                     </td>
                 </tr>
             </tbody>
