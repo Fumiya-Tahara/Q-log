@@ -23,11 +23,24 @@
 <!-- //* 保存されているレコードを一覧表示*// -->
   @forelse ($posts as $post)
     <tr>
-      <td><a href="{{ route('posts.show' , $post) }}">{{ $post->title }}</td></a>
-      <td>{{ $post->author }}</td>
+      <td><a href="{{ route('posts.show' , $post) }}">{{ $post->name }}</td></a>
+      <td>{{ $post->teacher }}</td>
     </tr>
   @empty
     <td>No posts!!</td>
   @endforelse
 </table>
+<div>
+  <h1>基幹教育</h1>
+  <h2>言語文化科目</h2>
+  <h2>文系ディシプリン科目</h2>
+  <h2>理系ディシプリン科目</h2>
+  <h2>サイバーセキュリティ科目</h2>
+  <h2>健康・スポーツ科目</h2>
+  <h2>総合科目</h2>
+  <h2>高年次基幹教育科目</h2>
+</div>
+<div>
+  <h1>専攻教育</h1>
+</dev>
 @endsection
