@@ -22,6 +22,7 @@ class CoursesSeeder extends Seeder
             'faculty' => '基幹教育', 
             'year' => 2022, 
             'term' => '前期', 
+            'subject' =>'理系ディシプリン'
             
         ]);
         Course::create([
@@ -33,6 +34,7 @@ class CoursesSeeder extends Seeder
             'faculty' => '基幹教育', 
             'year' => 2022, 
             'term' => '前期', 
+            'subject' =>'理系ディシプリン'
             
         ]);
         Course::create([
@@ -44,6 +46,7 @@ class CoursesSeeder extends Seeder
             'faculty' => '基幹教育', 
             'year' => 2022, 
             'term' => '前期', 
+            'subject' =>'理系ディシプリン'
             
         ]);
     }
