@@ -15,12 +15,14 @@ class PostController extends Controller
 
         if(!empty($keyword)) {
             $query->where('name', 'LIKE', "%{$keyword}%")
-                ->orWhere('teacher', 'LIKE', "%{$keyword}%");
+                ->orWhere('teacher', 'LIKE', "%{$keyword}%")
+                ->orwhere('term','LIKE',"%{$keyword}%")
+                ->orwhere('average_review','LIKE',"%{$keyword}%");
         }
 
         $posts = $query->get();
 
-        return view('courses', compact('posts', 'keyword'));
+        return view('search', compact('posts', 'keyword'));
     }
     public function show(Request $request)
     {
@@ -30,12 +32,14 @@ class PostController extends Controller
 
         if(!empty($keyword)) {
             $query->where('name', 'LIKE', "%{$keyword}%")
-                ->orWhere('teacher', 'LIKE', "%{$keyword}%");
+                ->orWhere('teacher', 'LIKE', "%{$keyword}%")
+                ->orwhere('term','LIKE',"%{$keyword}%")
+                ->orwhere('average_review','LIKE',"%{$keyword}%");
         }
 
         $posts = $query->get();
 
-        return view('courses', compact('posts', 'keyword'));
+        return view('search', compact('posts', 'keyword'));
     }
     public function create(Request $request)
     {
@@ -45,12 +49,14 @@ class PostController extends Controller
 
         if(!empty($keyword)) {
             $query->where('name', 'LIKE', "%{$keyword}%")
-                ->orWhere('teacher', 'LIKE', "%{$keyword}%");
+                ->orWhere('teacher', 'LIKE', "%{$keyword}%")
+                ->orwhere('term','LIKE',"%{$keyword}%")
+                ->orwhere('average_review','LIKE',"%{$keyword}%");
         }
 
         $posts = $query->get();
 
-        return view('courses', compact('posts', 'keyword'));
+        return view('search', compact('posts', 'keyword'));
     }
     
 }

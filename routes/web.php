@@ -24,9 +24,11 @@ Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-Route::get('/courses', [App\Http\Controllers\PostController::class, 'index'])
+Route::get('/courses', [App\Http\Controllers\CoursesController::class, 'index'])->name('courses');
+
+Route::get('/search', [App\Http\Controllers\PostController::class, 'index'])
     ->name('posts.index');
-Route::get('/courses/{courses}', [App\Http\Controllers\PostController::class, 'show'])
+Route::get('/search/{search}', [App\Http\Controllers\PostController::class, 'show'])
     ->name('posts.show');
-Route::get('/courses/create', [App\Http\Controllers\PostController::class, 'create'])
+Route::get('/search/create', [App\Http\Controllers\PostController::class, 'create'])
     ->name('posts.create');

@@ -1,3 +1,12 @@
+<head>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+<link rel="stylesheet" href="{{ asset('/css/courses.css') }}">
+</head>
+
+@vite(['resources/sass/app.scss', 'resources/js/app.js'])
+
 @extends('layouts.app')
 
 @section('content')
@@ -10,37 +19,25 @@
 </div>
 <!-- //*検索機能ここまで*// -->
 
-<h1>
-  <span>授業一覧</span>
-  <a href="{{ route('posts.create') }}">[Add]</a>
-</h1>
-
-<table>
-  <tr>
-    <th>教授名</th><th>教授名</th>
-  </tr>
-
-<!-- //* 保存されているレコードを一覧表示*// -->
-  @forelse ($posts as $post)
-    <tr>
-      <td><a href="{{ route('posts.show' , $post) }}">{{ $post->name }}</td></a>
-      <td>{{ $post->teacher }}</td>
-    </tr>
-  @empty
-    <td>No posts!!</td>
-  @endforelse
-</table>
 <div>
-  <h1>基幹教育</h1>
-  <h2>言語文化科目</h2>
-  <h2>文系ディシプリン科目</h2>
-  <h2>理系ディシプリン科目</h2>
-  <h2>サイバーセキュリティ科目</h2>
-  <h2>健康・スポーツ科目</h2>
-  <h2>総合科目</h2>
-  <h2>高年次基幹教育科目</h2>
+  <h1 class="btn btn-primary" type="button" data-toggle="collapse" data-target="#kikan" aria-expanded="false" aria-controls="collapseExample">
+    基幹教育
+  </h1>
+  <div class="collapse" id="kikan">
+  <ul>
+  <li type="button" class="btn btn-secondary">言語文化科目</li>
+  <li type="button" class="btn btn-secondary">文系ディシプリン科目</li>
+  <li type="button" class="btn btn-secondary">理系ディシプリン科目</li>
+  <li type="button" class="btn btn-secondary">サイバーセキュリティ科目</li>
+  <li type="button" class="btn btn-secondary">健康・スポーツ科目</li>
+  <li type="button" class="btn btn-secondary">総合科目</li>
+  <li type="button" class="btn btn-secondary">高年次基幹教育科目</li>
+  </ul>
+  </div>
 </div>
 <div>
-  <h1>専攻教育</h1>
+  <h1 class="btn btn-primary" type="button" data-toggle="collapse" data-target="#kikan" aria-expanded="false" aria-controls="collapseExample">
+    専攻教育
+  </h1>
 </dev>
 @endsection
