@@ -7,13 +7,19 @@
 @section('content')
 
     @foreach ($evaluations as $eval)
+    
         <div class="eval-container">
-            <div class="sentence" id="sentence">
+
+            <div class="review" id="review">
+                {{ $eval-> review}}
+            </div>
+
+            <div class="review" id="review">
                 {{ $eval-> sentence}}
             </div>
 
             <div class="review" id="review">
-                {{ $course-> review}}
+                {{ $eval-> sentence}}
             </div>
 
         </div>

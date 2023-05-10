@@ -7,6 +7,7 @@
 @section('content')
 
     @foreach ($courses as $course)
+    
         <div class="class-container">
             <div class="name" id="name">
                 {{ $course-> name}}
@@ -18,10 +19,6 @@
 
             <div class="name" id="department">
                 {{ $course-> department}}
-            </div>
-            
-            <div class="name" id="faculty">
-                {{ $course-> faculty}}
             </div>
 
             <div class="name" id="faculty">
