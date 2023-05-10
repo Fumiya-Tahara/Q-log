@@ -23,3 +23,5 @@ Route::get('/bootstrap', function () {
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Route::get('/evaluation', [App\Http\Controllers\EvaluationsController::class, 'index'])->name('evaluation');
