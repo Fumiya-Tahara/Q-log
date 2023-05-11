@@ -1,25 +1,27 @@
-{{-- 授業評価用の画面レイアウト --}}
+{{-- 評価画面レイアウト(本来担当ではないのですが具体的なイメージ用に作っています) --}}
 {{-- 仕様変更につき一応department追加 --}}
 {{-- department=学部,faculty=学科 --}}
+
 @extends('layouts.app')
 
 
 @section('content')
 
-    @foreach ($evaluations as $eval)
+{{-- 評価データの変数 --}}
+    @foreach ($evaluations as $evaluation)
     
         <div class="eval-container">
 
             <div class="review" id="review">
-                {{ $eval-> review}}
+                {{ $evaluation-> review}}
             </div>
 
             <div class="review" id="review">
-                {{ $eval-> sentence}}
+                {{ $evaluation-> sentence}}
             </div>
 
             <div class="review" id="review">
-                {{ $eval-> sentence}}
+                {{ $evaluation-> sentence}}
             </div>
 
         </div>
