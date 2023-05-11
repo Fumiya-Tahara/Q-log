@@ -11,9 +11,9 @@ class EvaluationsController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index($class_id)
+    public function index($course_id)
     {
-        $evaluations = Evaluation::where('class_id', $class_id)
+        $evaluations = Evaluation::where('course_id', $course_id)
         
         // 作成された順に授業のidごとに整理して表示する。
                         ->getAllOrderByUpdated_at()

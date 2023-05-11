@@ -7,12 +7,16 @@
 
 @section('content')
 
-{{-- 評価データの変数 --}}
+{{-- 評価データの変数。foreachでuseridごとに評価がみられるようにする。 --}}
     @foreach ($evaluations as $evaluation)
     
         <div class="evaluation-container">
 
-            <div class="evaluation" id="evaluation">
+            <div class="evaluation" id="user_name">
+                ユーザー名:{{ $evaluation-> user_name}}
+            </div>
+
+            <div class="evaluation" id="review">
                 評価:{{ $evaluation-> review}}
             </div>
 
@@ -38,6 +42,7 @@
                 </textarea>
 
                 <select name="review">
+                    {{-- 点数選択のラジオボタン --}}
                     <option value="1">1</option>
                     <option value="2">2</option>
                     <option value="3" selected>3</option>
