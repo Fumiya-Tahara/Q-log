@@ -13,9 +13,10 @@ class EvaluationsController extends Controller
      */
     public function index($course_id)
     {
+        // 作成された順に授業のidごとに整理して表示する。
         $evaluations = Evaluation::where('course_id', $course_id)
         
-        // 作成された順に授業のidごとに整理して表示する。
+        // 投稿日時を整理して表示する。
                         ->getAllOrderByUpdated_at()
                         ->get();
 
