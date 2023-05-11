@@ -24,5 +24,5 @@ Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-Route::get('/evaluation/{id}', [App\Http\Controllers\EvaluationsController::class, 'index'])->name('evaluation');
+Route::get('/evaluation/{id}', [App\Http\Controllers\EvaluationsController::class, 'index'])->name('evaluation.index');
 

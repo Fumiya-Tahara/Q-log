@@ -13,7 +13,11 @@ class EvaluationsController extends Controller
      */
     public function index($class_id)
     {
-        $evaluations = Evaluation::where('class_id', $class_id)->get();
+        $evaluations = Evaluation::where('class_id', $class_id)
+        // 作成された順に整理して表示する。
+                        ->getAllOrderByUpdated_at()
+                        ->get();
+
         return view("evaluations", compact('evaluations'));
     }
 
@@ -31,7 +35,9 @@ class EvaluationsController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $result = Evaluation::create($request->all());
+        // ルーティング「evaluation.index」にリクエスト送信（その授業の一覧ページに移動）
+        return redirect()->route('evaluation.index');
     }
 
     /**
