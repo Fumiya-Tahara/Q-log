@@ -14,7 +14,8 @@ class EvaluationsController extends Controller
     public function index($class_id)
     {
         $evaluations = Evaluation::where('class_id', $class_id)
-        // 作成された順に整理して表示する。
+        
+        // 作成された順に授業のidごとに整理して表示する。
                         ->getAllOrderByUpdated_at()
                         ->get();
 
@@ -35,8 +36,12 @@ class EvaluationsController extends Controller
      */
     public function store(Request $request)
     {
+        // とりあえず制限する要素がないのでバリデーションはなしで。
+
         $result = Evaluation::create($request->all());
-        // ルーティング「evaluation.index」にリクエスト送信（その授業の一覧ページに移動）
+
+        // evaluation.indexにリクエスト送信（その授業の一覧ページに移動）
+
         return redirect()->route('evaluation.index');
     }
 
