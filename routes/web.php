@@ -26,3 +26,5 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 
 Route::get('/evaluation/{id}', [App\Http\Controllers\EvaluationsController::class, 'index'])->name('evaluation.index');
 
+Route::post('/evaluation/{id}', [App\Http\Controllers\EvaluationsController::class, 'store'])->name('evaluation.store');
+

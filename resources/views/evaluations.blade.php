@@ -13,15 +13,15 @@
         <div class="evaluation-container">
 
             <div class="evaluation" id="evaluation">
-                {{ $evaluation-> review}}
+                評価:{{ $evaluation-> review}}
             </div>
 
             <div class="evaluation" id="sentence">
-                {{ $evaluation-> sentence}}
+                コメント:{{ $evaluation-> sentence}}
             </div>
 
             <div class="evaluation" id="created_at">
-                {{ $evaluation-> created_at}}
+                投稿日時:{{ $evaluation-> created_at}}
             </div>
 
         </div>

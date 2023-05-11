@@ -36,11 +36,11 @@ class EvaluationsController extends Controller
      */
     public function store(Request $request)
     {
-        // とりあえず制限する要素がないのでバリデーションはなしで。
+        // 制限する要素がないのでとりあえずバリデーションはなしで。
 
         $result = Evaluation::create($request->all());
 
-        // evaluation.indexにリクエスト送信（その授業の一覧ページに移動）
+        // evaluation.indexにリクエスト送信（その授業の評価一覧ページに移動）
 
         return redirect()->route('evaluation.index');
     }
