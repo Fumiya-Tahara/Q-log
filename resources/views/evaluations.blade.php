@@ -1,6 +1,5 @@
 {{-- 評価画面レイアウト(本来担当ではないのですが具体的なイメージ用に作っています) --}}
-{{-- 仕様変更につき一応department追加 --}}
-{{-- department=学部,faculty=学科 --}}
+
 
 @extends('layouts.app')
 
@@ -34,7 +33,7 @@
     
     <div class="evaluation-input">
 
-        <form action="{{ route('evaluation.store') }}"" method="post">
+        <form action="{{ route('evaluation.store') }}"  method="post">
 
                 @csrf
                 <textarea name="sentence" id="sentence" cols="30" rows="10" placeholder="評価を入力してください">
