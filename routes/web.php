@@ -1,9 +1,6 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\CourseRegisterController;
-use App\Http\Controllers\UserInfoController;
-use App\Http\Controllers\EditUserInfoController;
 
 /*
 |--------------------------------------------------------------------------

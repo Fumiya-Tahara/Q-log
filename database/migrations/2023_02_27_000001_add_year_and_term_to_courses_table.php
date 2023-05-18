@@ -11,13 +11,9 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('evaluations', function (Blueprint $table) {
-            $table->id();
-            $table->integer('class_id');
-            $table->integer('user_id');
-            $table->integer('review');
-            $table->string('sentence')->nullable();
-            $table->timestamps();
+        Schema::table('courses', function (Blueprint $table) {
+            $table->integer('year')->after('faculty');
+            $table->string('term')->after('year');
         });
     }
 
@@ -26,6 +22,9 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('evaluations');
+        Schema::table('courses', function (Blueprint $table) {
+            $table->dropColumn('year');
+            $table->dropColumn('term');
+        });
     }
 };
