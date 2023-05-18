@@ -35,4 +35,4 @@ Route::get('/users_edit', [EditUserInfoController::class, 'index']);
 
 Route::put('/users_update', [EditUserInfoController::class, 'edit']);
 
-Route::get('/user_info', [UserInfoController::class, 'profile']);
+Route::get('/user_info', [UserInfoController::class, 'index']);

@@ -56,16 +56,16 @@
                     <td>
                         <select name="term" class="form-select" required>
                             <option selected disabled value=""></option>
-                            <option value="1" @if(old('term')=='1') selected @endif>通年</option>
-                            <option value="2" @if(old('term')=='2') selected @endif>通年集中</option>
-                            <option value="3" @if(old('term')=='3') selected @endif>前期</option>
-                            <option value="4" @if(old('term')=='4') selected @endif>春学期</option>
-                            <option value="5" @if(old('term')=='5') selected @endif>夏学期</option>
-                            <option value="6" @if(old('term')=='6') selected @endif>前期集中</option>
-                            <option value="7" @if(old('term')=='7') selected @endif>後期</option>
-                            <option value="8" @if(old('term')=='8') selected @endif>秋学期</option>
-                            <option value="9" @if(old('term')=='9') selected @endif>冬学期</option>
-                            <option value="10" @if(old('term')=='10') selected @endif>後期集中</option>
+                            <option value="通年" @if(old('term')=='通年') selected @endif>通年</option>
+                            <option value="通年集中" @if(old('term')=='通年集中') selected @endif>通年集中</option>
+                            <option value="前期" @if(old('term')=='前期') selected @endif>前期</option>
+                            <option value="春学期" @if(old('term')=='春学期') selected @endif>春学期</option>
+                            <option value="夏学期" @if(old('term')=='夏学期') selected @endif>夏学期</option>
+                            <option value="前期集中" @if(old('term')=='前期集中') selected @endif>前期集中</option>
+                            <option value="後期" @if(old('term')=='後期') selected @endif>後期</option>
+                            <option value="秋学期" @if(old('term')=='秋学期') selected @endif>秋学期</option>
+                            <option value="冬学期" @if(old('term')=='冬学期') selected @endif>冬学期</option>
+                            <option value="後期集中" @if(old('term')=='後期集中') selected @endif>後期集中</option>
                         </select>
                     </td>
                 </tr>

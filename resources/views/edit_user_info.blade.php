@@ -51,7 +51,7 @@
                 <tr>
                     <th scope="row">アイコン</th>
                     <td>
-                        <input name="icon" type="text" class="form-control" value="{{ $user->icon }}">
+                        <input name="icon" type="file" class="form-control" id="formFile" value="{{ $user->icon }}">
                     </td>
                 </tr>
             </tbody>
@@ -61,4 +61,5 @@
         </div>
     </form>
 </div>
+<script src="croppie.js"></script>
 @endsection

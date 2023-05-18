@@ -13,39 +13,33 @@ class EditUserInfoController extends Controller
         return view('edit_user_info', compact('user'));
     }
 
-    public function edit(Request $request, User $user) {
-        // $user = User::find($profile);
-
-        // $name = $request['name'];
-        // $grade = $request['grade'];
-        // $faculty_and_department = $request['faculty_and_department'];
-        // $icon = $request['icon'];
-        // $free_text = $request['free_text'];
-
+    public function edit(Request $request) {
         $user = Auth::user();
-        User::where($user, 'user')->update([
-            $user->name = $request->input('name'),
-            $user->grade = $request->input('grade'),
-            $user->faculty_and_department = $request->input('faculty_and_department'),
-            $user->free_text = $request->input('free_text'),
-            $user->icon = $request->input('icon'),
+        $request->validate([
+            'name' => 'required',
+            'grade' => 'numeric'
+            // 'faculty_and_department',
+            // 'free_text',
+            // 'icon'
         ]);
 
-        
-        // $user->save();
-        // update([
-        //     'name' => $name,
-        //     'grade' => $grade,
-        //     'faculty_and_department' => $faculty_and_department,
-        //     'icon' => $icon,
-        //     'free_text' => $free_text
-        // ]);
-        // $user->name = $name->save();
-        // $user->grade = $grade->save();
-        // $user->faculty_and_department = $faculty_and_department->save();
-        // $user->icon = $icon->save();
-        // $user->free_text = $free_text->save();
+        $name = $request->input('name');
+        $grade = $request->input('grade');
+        $faculty_and_department = $request->input('faculty_and_department');
+        $free_text = $request->input('free_text');
+        $icon = $request->input('icon');
+        Auth::user()->update([
+            'name' => $name,
+            'grade' => $grade,
+            'faculty_and_department' => $faculty_and_department,
+            'free_text' => $free_text,
+            'icon' => $icon
+        ]);
 
-        return view('/home');
+        // $profile = $request->all();
+        // unset($profile['_token']);
+        // $user->fill($profile)->save();
+
+        return view('home');
     }
 }
