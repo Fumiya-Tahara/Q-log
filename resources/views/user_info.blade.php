@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-<<!-- Croppie -->>
+<!-- Croppie -->
 <link rel="stylesheet" href="croppie.css">
 
 <div class="container">

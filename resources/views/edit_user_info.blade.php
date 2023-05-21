@@ -3,7 +3,7 @@
 @section('content')
 <div class="container">
     <h3>ユーザー情報編集</h3>
-    <form action="{{ url('/users_update'), $user->user }}" method="POST">
+    <form action="{{ url('/users_update'), $user->user }}" method="POST" enctype="multipart/form-data">
         @csrf
         <input type="hidden" name="_method" value="PUT">
         <table class="table table-bordered">
@@ -51,7 +51,7 @@
                 <tr>
                     <th scope="row">アイコン</th>
                     <td>
-                        <input name="icon" type="file" class="form-control" id="formFile" value="{{ $user->icon }}">
+                        <input name="icon" type="file" class="form-control" id="formFile" value="">
                     </td>
                 </tr>
             </tbody>

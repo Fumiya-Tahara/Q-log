@@ -27,13 +27,22 @@ class EditUserInfoController extends Controller
         $grade = $request->input('grade');
         $faculty_and_department = $request->input('faculty_and_department');
         $free_text = $request->input('free_text');
-        $icon = $request->input('icon');
+        $icon = $request->file('icon');
+        
+        if($icon != null){
+            // $icon_delete = $user->icon;
+            // Storage::disk('public')->delete($icon_delete) ;
+            $path =  $icon->store('public/images/profiles');
+            $path = str_replace('public/', 'storage/', $path);
+            // dd($path);
+            // storage/images/profiles/
+        }
         Auth::user()->update([
             'name' => $name,
             'grade' => $grade,
             'faculty_and_department' => $faculty_and_department,
             'free_text' => $free_text,
-            'icon' => $icon
+            'icon' => $path
         ]);
 
         // $profile = $request->all();
