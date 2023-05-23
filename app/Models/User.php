@@ -49,4 +49,16 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+    public function favorites()
+    {
+        return $this->hasMany(Favorite::class);
+    }
+    public function favorite_courses()
+    {
+        return $this->belongsToMany(course::class, 'favorites', 'user_id', 'course_id');
+    }
+    public function is_favorite($courseId)
+    {
+        return $this->favorites()->where('course_id', $courseId)->exists();
+    }
 }
