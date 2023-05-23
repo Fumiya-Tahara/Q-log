@@ -45,7 +45,7 @@
     </tr>
   @empty
     <td>No posts!!</td>
-    
+    <!--  -->
   @endforelse
   </tbody>
   

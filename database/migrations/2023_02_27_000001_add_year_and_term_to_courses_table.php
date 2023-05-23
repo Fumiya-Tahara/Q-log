@@ -16,7 +16,7 @@ return new class extends Migration
             $table->string('term')->after('year');
         });
     }
-
+// 
     /**
      * Reverse the migrations.
      */

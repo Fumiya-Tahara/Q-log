@@ -23,3 +23,4 @@ class FavoriteController extends Controller
         return back();
     }
 }
+// 

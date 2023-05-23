@@ -24,7 +24,7 @@ class CoursesSeeder extends Seeder
             'term' => '前期', 
             'subject' =>'理系ディシプリン',
             'favorite' => true
-            
+            // 
         ]);
         Course::create([
             'name' => '線形代数学Ⅰ',

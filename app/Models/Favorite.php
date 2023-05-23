@@ -17,3 +17,4 @@ class Favorite extends Model
         return $this->belongsTo(course::class);
     }
 }
+// 

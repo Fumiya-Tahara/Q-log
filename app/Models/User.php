@@ -30,7 +30,7 @@ class User extends Authenticatable
         'crop_width',
         'crop_height'
     ];
-
+// 
     /**
      * The attributes that should be hidden for serialization.
      *

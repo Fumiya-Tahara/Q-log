@@ -26,7 +26,7 @@ class UsersSeeder extends Seeder
             'email' => 'jiro@s.kyushu-u.ac.jp',
             'password' => Hash::make('password'),
         ]);
-
+// 
         User::create([
             'name' => '三郎',
             'email' => 'saburo@s.kyushu-u.ac.jp',

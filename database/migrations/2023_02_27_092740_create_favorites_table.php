@@ -23,7 +23,7 @@ return new class extends Migration
 		        $table->unique(['user_id', 'course_id']);
         });
     }
-
+// 
     /**
      * Reverse the migrations.
      */

@@ -22,3 +22,4 @@ class CoursesController extends Controller
         return view('favorite_courses', ['posts' => $posts]);
     }
 }
+// 

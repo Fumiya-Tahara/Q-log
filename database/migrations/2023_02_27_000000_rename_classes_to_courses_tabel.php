@@ -15,7 +15,7 @@ return new class extends Migration
             $table->string('subject'); //
         });
     }
-
+// 
     /**
      * Reverse the migrations.
      */

@@ -27,7 +27,7 @@ class evaluationsSeeder extends Seeder
             'user_id' => '2',
             'review' => '1'
         ]);
-
+// 
         evaluation::create([
             'sentence' => 'ccccc',
             'course_id' => '2',
