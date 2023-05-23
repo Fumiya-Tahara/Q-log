@@ -1,8 +1,6 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\CoursesController;
-use App\Http\Controllers\FavoriteController;
 use App\Http\Controllers\CourseRegisterController;
 use App\Http\Controllers\EditUserInfoController;
 use App\Http\Controllers\UserInfoController;
@@ -33,18 +31,6 @@ Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-Route::get('/courses', [App\Http\Controllers\CoursesController::class, 'index'])->name('courses');
-
-Route::get('/search', [App\Http\Controllers\PostController::class, 'index'])
-    ->name('posts.index');
-Route::get('/search/{search}', [App\Http\Controllers\PostController::class, 'show'])
-    ->name('posts.show');
-Route::get('/search/create', [App\Http\Controllers\PostController::class, 'create'])
-    ->name('posts.create');
-Route::post('/search/{post}/favorite', [FavoriteController::class, 'store'])->name('Favorite.store');
-Route::delete('/search/{post}/unfavorite', [FavoriteController::class, 'destroy'])->name('Favorite.destroy');
-Route::get('/favorites', [CoursesController::class, 'favorite_courses'])->name('favorites');
-
 Route::get('/evaluation/{course_id}', [App\Http\Controllers\EvaluationsController::class, 'index'])->name('evaluation.index');
 
 Route::post('/evaluation/{course_id}', [App\Http\Controllers\EvaluationsController::class, 'store'])->name('evaluation.store');
@@ -58,4 +44,3 @@ Route::get('/users_edit', [EditUserInfoController::class, 'index']);
 Route::put('/users_update', [EditUserInfoController::class, 'edit']);
 
 Route::get('/user_info', [UserInfoController::class, 'index']);
-
