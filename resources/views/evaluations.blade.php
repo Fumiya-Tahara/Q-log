@@ -11,11 +11,11 @@
     
         <div class="evaluation-container">
 
-        {{--生徒の事情を考えて一応匿名に --}}
-    {{--         
+ 
+            
         <div class="evaluation" id="user_name">
             ユーザー名: {{ $evaluation->user->name }}
-        </div> --}}
+        </div>
 
             <div class="evaluation" id="review">
                 評価:{{ $evaluation-> review}}

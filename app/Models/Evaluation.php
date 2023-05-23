@@ -14,6 +14,10 @@ class Evaluation extends Model
       return $this->belongsTo('App\Models\Courses');
   }
 
+  public function user() {
+    return $this->belongsTo('App\Models\User');
+}
+
     // 投稿日時ごとに並び変えるための関数getAllOrderByUpdated_at()
     public static function getAllOrderByUpdated_at()
   {
