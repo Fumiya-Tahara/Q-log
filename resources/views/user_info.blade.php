@@ -8,7 +8,8 @@
     <h3>ユーザー情報</h3>
     <div class="d-flex justify-content-evenly">
         <div class="flex-shrink-0">
-            <img src={{ url('storage/images/profiles/blank-profile-picture-gbf03f3328_640.png') }} style="width: 100px; height: 100px;">
+            {{-- <img src={{ url( $user->icon ) }} style="position: absolute; top: {{ $user->crop_y }}px; left: {{ $user->crop_x }}px;
+            width: {{ $user->crop_width }}px; height: {{ $user->crop_height }}px;"> --}}
         </div>
         <div class="flex-grow-1 ms-3">
             <h2>{{ $user->name }}</h2>
