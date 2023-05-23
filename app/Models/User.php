@@ -24,7 +24,11 @@ class User extends Authenticatable
         'grade',
         'faculty_and_department',
         'free_text',
-        'icon'
+        'icon',
+        'crop_x',
+        'crop_y',
+        'crop_width',
+        'crop_height'
     ];
 
     /**
@@ -37,7 +41,6 @@ class User extends Authenticatable
         'remember_token',
     ];
 
-    
     /**
      * The attributes that should be cast.
      *
