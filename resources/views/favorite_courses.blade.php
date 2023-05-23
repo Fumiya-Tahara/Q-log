@@ -45,7 +45,9 @@
     </tr>
   @empty
     <td>No posts!!</td>
+    
   @endforelse
   </tbody>
+  
   {{ $posts->links() }}
 @endsection()
