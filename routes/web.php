@@ -1,6 +1,9 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\CourseRegisterController;
+use App\Http\Controllers\EditUserInfoController;
+use App\Http\Controllers\UserInfoController;
 
 use Illuminate\Support\Facades\Auth;
 
@@ -32,3 +35,12 @@ Route::get('/evaluation/{course_id}', [App\Http\Controllers\EvaluationsControlle
 
 Route::post('/evaluation/{course_id}', [App\Http\Controllers\EvaluationsController::class, 'store'])->name('evaluation.store');
 
+Route::get('/course_register', [CourseRegisterController::class, 'index']);
+
+Route::post('/course_post', [CourseRegisterController::class, 'create']);
+
+Route::get('/users_edit', [EditUserInfoController::class, 'index']);
+
+Route::put('/users_update', [EditUserInfoController::class, 'edit']);
+
+Route::get('/user_info', [UserInfoController::class, 'index']);
