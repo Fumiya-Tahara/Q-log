@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\CoursesController;
+use App\Http\Controllers\FavoriteController;
 
 /*
 |--------------------------------------------------------------------------
@@ -32,3 +34,6 @@ Route::get('/search/{search}', [App\Http\Controllers\PostController::class, 'sho
     ->name('posts.show');
 Route::get('/search/create', [App\Http\Controllers\PostController::class, 'create'])
     ->name('posts.create');
+Route::post('/search/{post}/favorite', [FavoriteController::class, 'store'])->name('Favorite.store');
+Route::delete('/search/{post}/unfavorite', [FavoriteController::class, 'destroy'])->name('Favorite.destroy');
+Route::get('/favorites', [CoursesController::class, 'favorite_courses'])->name('favorites');
