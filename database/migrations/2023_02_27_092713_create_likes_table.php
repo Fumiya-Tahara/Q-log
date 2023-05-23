@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('likes', function (Blueprint $table) {
             $table->id();
             $table->integer('user_id');
-            $table->integer('course_id');
+            $table->integer('evaluation_id');
             $table->timestamps();
         });
     }

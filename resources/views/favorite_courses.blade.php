@@ -29,7 +29,7 @@
       <td>{{$post->year}}</td>
       <td>{{$post->faculty}}</td>
       <td>{{$post->subject}}</td>
-      <td>@if (!$post->id)
+      <td>@if (!$post->favorite)
         <form action="{{ route('Favorite.store', $post) }}" method="post">
             @csrf
             <button>お気に入り登録</button>

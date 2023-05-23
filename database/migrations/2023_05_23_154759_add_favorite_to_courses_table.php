@@ -11,7 +11,9 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::rename('classes', 'courses');
+        Schema::table('courses', function (Blueprint $table) {
+            $table->boolean('favorite');  //カラム追加
+        });
     }
 
     /**
@@ -20,7 +22,7 @@ return new class extends Migration
     public function down(): void
     {
         Schema::table('courses', function (Blueprint $table) {
-            //
+            $table->dropColumn('favorite');  //カラムの削除
         });
     }
 };

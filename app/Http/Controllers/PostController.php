@@ -26,7 +26,7 @@ class PostController extends Controller
         }
 
         $posts = $query->orderBy('lecture_code', 'desc')->paginate(20);
-
+        
         return view('search', compact('posts', 'keyword'));
     }
     
