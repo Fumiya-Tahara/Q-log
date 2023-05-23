@@ -9,4 +9,11 @@ class Evaluation extends Model
 {
     use HasFactory;
     protected $fillable = ['sentence', 'review'];
+
+    // 投稿日時ごとに並び変えるための関数getAllOrderByUpdated_at()
+    public static function getAllOrderByUpdated_at()
+  {
+    return self::orderBy('created_at', 'desc')->get();
+  }
 }
+
