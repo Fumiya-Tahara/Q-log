@@ -1,10 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
 use App\Http\Controllers\CoursesController;
 use App\Http\Controllers\FavoriteController;
-
 use App\Http\Controllers\CourseRegisterController;
 use App\Http\Controllers\EditUserInfoController;
 use App\Http\Controllers\UserInfoController;
@@ -12,7 +10,6 @@ use App\Http\Controllers\UserInfoController;
 use Illuminate\Support\Facades\Auth;
 
 use App\Http\Controllers\EvaluationsController;
-
 
 /*
 |--------------------------------------------------------------------------
@@ -35,7 +32,6 @@ Route::get('/bootstrap', function () {
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-
 
 Route::get('/courses', [App\Http\Controllers\CoursesController::class, 'index'])->name('courses');
 
