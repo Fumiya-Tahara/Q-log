@@ -3,8 +3,12 @@
 namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
+// use Dotenv\Validator;
+use Illuminate\Support\Facades\Validator;
+
 use Illuminate\Http\Request;
 use App\Models\Evaluation;
+use App\Models\Course;
 
 class EvaluationsController extends Controller
 {
@@ -19,6 +23,7 @@ class EvaluationsController extends Controller
         // 投稿日時を整理して表示する。
                         ->getAllOrderByUpdated_at()
                         ->get();
+                        
 
         return view("evaluations", compact('evaluations'));
     }
@@ -37,7 +42,18 @@ class EvaluationsController extends Controller
      */
     public function store(Request $request)
     {
-        // 制限する要素がないのでとりあえずバリデーションはなしで。
+        // 
+
+        $validator = Validator::make($request->all(), [
+            'review' => ['required'],
+            'sentence' => ['required']
+
+        ]);
+    
+        // バリデーションエラーがある場合はリダイレクトする
+        if ($validator->fails()) {
+            return redirect()->back()->withErrors($validator)->withInput();
+        }
 
         $result = Evaluation::create($request->all());
 

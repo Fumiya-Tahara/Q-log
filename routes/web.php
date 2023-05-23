@@ -2,6 +2,10 @@
 
 use Illuminate\Support\Facades\Route;
 
+use Illuminate\Support\Facades\Auth;
+
+use App\Http\Controllers\EvaluationsController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -24,7 +28,7 @@ Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-Route::get('/evaluation/{id}', [App\Http\Controllers\EvaluationsController::class, 'index'])->name('evaluation.index');
+Route::get('/evaluation/{course_id}', [App\Http\Controllers\EvaluationsController::class, 'index'])->name('evaluation.index');
 
-Route::post('/evaluation/{id}', [App\Http\Controllers\EvaluationsController::class, 'store'])->name('evaluation.store');
+Route::post('/evaluation/{course_id}', [App\Http\Controllers\EvaluationsController::class, 'store'])->name('evaluation.store');
 

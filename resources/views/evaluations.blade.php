@@ -1,4 +1,4 @@
-{{-- 評価画面レイアウト(本来担当ではないのですが具体的なイメージ用に作っています) --}}
+{{-- 評価画面レイアウト --}}
 
 
 @extends('layouts.app')
@@ -37,20 +37,25 @@
 
                 @csrf
                 <textarea name="sentence" id="sentence" cols="30" rows="10" placeholder="評価を入力してください">
-                    コメント
+                    コメント:
                 </textarea>
 
-                <select name="review">
-                    {{-- 点数選択のラジオボタン --}}
-                    <option value="1">1</option>
-                    <option value="2">2</option>
-                    <option value="3" selected>3</option>
-                    <option value="4">4</option>
-                    <option value="5">5</option>
-                </select>
+                <label for="review">評価(1-5):</label>
+
+                <input type="number" id="review" name="review" min="1" max="5">
+{{-- レビュー用のバリデーション --}}
+                @if ($errors->has('review'))
+                    <div class="alert alert-danger">
+                        @if ($errors->first('review') === 'The review must be a number.')
+                            レビューの数値を適切に入力してください
+                        @else
+                            {{ $errors->first('review') }}
+                        @endif
+                    </div>
+                @endif
 
                 <div class="submmit">
-                    <button type="submit" class="btn" >評価する</button>
+                    <button type="submit" class="btn" >評価を投稿する</button>
                 </div>
                 
         </form>
