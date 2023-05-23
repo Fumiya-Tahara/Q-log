@@ -18,7 +18,7 @@
   </form>
 </div>
 <!-- //*検索機能ここまで*// -->
-<!-- なぜ -->
+
 
 <div>
   <h1 class="btn btn-primary" type="button" data-toggle="collapse" data-target="#kikan" aria-expanded="false" aria-controls="collapseExample">
