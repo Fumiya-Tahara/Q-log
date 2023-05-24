@@ -50,10 +50,10 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
-    // 「１対１」→ メソッド名は単数形
     Public function evaluation()
     {
-        // evaluationモデルのデータを引っ張てくる
+        // evaluationとのリレーション
+        
         return $this->hasMany('App\Models\Evaluation');
     }
 }

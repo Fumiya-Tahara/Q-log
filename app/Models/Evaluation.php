@@ -10,10 +10,11 @@ class Evaluation extends Model
     use HasFactory;
     protected $fillable = ['sentence', 'review'];
 
+    // courseへのリレーション
     public function course() {
       return $this->belongsTo('App\Models\Courses');
   }
-
+// userへのリレーション
   public function user() {
     return $this->belongsTo('App\Models\User');
 }
