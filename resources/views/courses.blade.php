@@ -40,5 +40,5 @@
   <h1 class="btn btn-primary" type="button" data-toggle="collapse" data-target="#kikan" aria-expanded="false" aria-controls="collapseExample">
     専攻教育
   </h1>
-</dev>
+</div>
 @endsection

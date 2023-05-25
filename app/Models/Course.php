@@ -18,4 +18,8 @@ class Course extends Model
         'year',
         'term',
     ];
+
+    public function evaluation() {
+        return $this->hasMany('App\Models\Evaluation');
+    }
 }

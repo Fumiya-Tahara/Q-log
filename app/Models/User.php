@@ -49,4 +49,11 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    Public function evaluation()
+    {
+        // evaluationとのリレーション
+        
+        return $this->hasMany('App\Models\Evaluation');
+    }
 }
