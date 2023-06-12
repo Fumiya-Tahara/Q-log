@@ -12,17 +12,17 @@ class Evaluation extends Model
 
     // courseへのリレーション
     public function course() {
-      return $this->belongsTo('App\Models\Courses');
+      return $this->belongsTo(Course::class);
   }
 // userへのリレーション
   public function user() {
-    return $this->belongsTo('App\Models\User');
+    return $this->belongsTo(User::class);
 }
 
     // 投稿日時ごとに並び変えるための関数getAllOrderByUpdated_at()
-    public static function getAllOrderByUpdated_at()
-  {
-    return self::orderBy('created_at', 'desc')->get();
-  }
+  //   public static function getAllOrderByUpdated_at()
+  // {
+  //   return self::orderBy('created_at', 'desc')->get();
+  // }
 }
 

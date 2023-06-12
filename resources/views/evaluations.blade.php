@@ -7,6 +7,36 @@
 @section('content')
 
 {{-- 評価データの変数。foreachでuseridごとに評価がみられるようにする。 --}}
+<div class="evaluation-input">
+
+    <form action="{{ route('evaluation.store') }}"  method="post">
+
+            @csrf
+            <textarea name="sentence" id="sentence" cols="30" rows="10" placeholder="評価を入力してください">
+                コメント:
+            </textarea>
+
+            <label for="review">評価(1-5):</label>
+
+            <input type="number" id="review" name="review" min="1" max="5">
+            {{-- レビュー用のバリデーション --}}
+            
+            @if ($errors->has('review'))
+                <div class="alert alert-danger">
+                    @error('review')
+                        レビューの数値を適切に入力してください
+                    @enderror
+                </div>
+            @endif
+        
+
+            <div class="submmit">
+                <button type="submit" class="btn" >評価を投稿する</button>
+            </div>
+            
+    </form>
+</div>
+
     @foreach ($evaluations as $evaluation)
     
         <div class="evaluation-container">
@@ -33,37 +63,6 @@
 
         </div>
     @endforeach
-
-
-    <div class="evaluation-input">
-
-        <form action="{{ route('evaluation.store') }}"  method="post">
-
-                @csrf
-                <textarea name="sentence" id="sentence" cols="30" rows="10" placeholder="評価を入力してください">
-                    コメント:
-                </textarea>
-
-                <label for="review">評価(1-5):</label>
-
-                <input type="number" id="review" name="review" min="1" max="5">
-                {{-- レビュー用のバリデーション --}}
-                
-                @if ($errors->has('review'))
-                    <div class="alert alert-danger">
-                        @error('review')
-                            レビューの数値を適切に入力してください
-                        @enderror
-                    </div>
-                @endif
-            
-
-                <div class="submmit">
-                    <button type="submit" class="btn" >評価を投稿する</button>
-                </div>
-                
-        </form>
-    </div>
 
 @endsection
 
