@@ -17,10 +17,9 @@ class EvaluationsController extends Controller
      */
     public function index($id)
     {
-        $course = Course::findOrFail($id);
-        dd($course->evaluations);  
-        $evaluations = $course->evaluations;
-        // dd($course->evaluations);  
+        $course = Course::findOrFail($id);  
+        $evaluations = Evaluation::findOrFail($course->id);
+        // dd($evaluations);  
     
         return view("evaluations", compact('evaluations'));
     }

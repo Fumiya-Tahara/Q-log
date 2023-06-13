@@ -20,6 +20,6 @@ class Course extends Model
     ];
 
     public function evaluation() {
-        return $this->hasMany(Evaluation::class);
+        return $this->hasMany(Evaluation::class,'course_id','id');
     }
 }

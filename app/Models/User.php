@@ -54,6 +54,6 @@ class User extends Authenticatable
     {
         // evaluationとのリレーション
         
-        return $this->hasMany(Evaluation::class);
+        return $this->hasMany(Evaluation::class,'id','user_id');
     }
 }
