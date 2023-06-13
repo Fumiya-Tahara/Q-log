@@ -22,6 +22,13 @@ class evaluationsSeeder extends Seeder
         ]);
 
         Evaluation::create([
+            'sentence' => 'ddddd',
+            'course_id' => '1',
+            'user_id' => '2',
+            'review' => '3'
+        ]);
+
+        Evaluation::create([
             'sentence' => 'bbbbb',
             'course_id' => '1',
             'user_id' => '2',
