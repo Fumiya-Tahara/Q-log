@@ -9,7 +9,7 @@
             <div class="container">
                 <h3>評価投稿</h3>
 
-                <form action="{{  route('evaluation.store', ['course_id' => $course_id]) }}"  method="post">
+                <form action="{{  route('evaluation.store', ['course_id' => $courses->id]) }}"  method="post">
                     @csrf
 
                     <table class="table table-bordered">
