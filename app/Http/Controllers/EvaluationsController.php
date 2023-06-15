@@ -20,10 +20,10 @@ class EvaluationsController extends Controller
         $course = Course::findOrFail($id);  
         //忘れてた
         
-        $evaluations = Evaluation::findOrFail($course->id);
+        $evaluations = Evaluation::where($course->id)->get();
         // dd($evaluations);  
     
-        return view("evaluations", compact('evaluations'));
+        return view("evaluations", compact('evaluations','course'));
     }
     
     public function store(Request $request)
@@ -42,13 +42,16 @@ class EvaluationsController extends Controller
         $result = Evaluation::create([
             'sentence' => $request->input('sentence'),
             'review' => $request->input('review'),
+            'course_id' => $request->input('course_id'),
             'user_id' => auth()->id(),
         ]);
-        // course_idをマージして使えるようにすると行けるか？
         
-        $data = $request->merge(['course_id' => Course::create()->id])->all();
     
-        return redirect()->route('evaluation.index',[ $data => 'course_id']);
+        return redirect()->route('evaluation.index', ['course_id' => $request->input('course_id')]);
+
     }
     
+    
+
+
 }

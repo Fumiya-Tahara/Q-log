@@ -21,12 +21,6 @@ class Evaluation extends Model
 }
 
 
-protected static function booted()
-{
-    // static::creating(function ($evaluation) {
-    //     $evaluation->course_id = $courses->id;
-    // });
-}
 
 }
 
