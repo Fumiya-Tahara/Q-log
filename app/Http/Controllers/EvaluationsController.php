@@ -40,7 +40,7 @@ class EvaluationsController extends Controller
         $result = Evaluation::create([
             'sentence' => $request->input('sentence'),
             'review' => $request->input('review'),
-            'course_id' => $request->input('course_id'),
+            // 'course_id' => $evaluations->('course_id'),
             'user_id' => auth()->id(),
         ]);
     

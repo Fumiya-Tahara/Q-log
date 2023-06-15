@@ -4,11 +4,12 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use App\Models\Course;
 
 class Evaluation extends Model
 {
     use HasFactory;
-    protected $fillable = ['sentence', 'review'];
+    protected $fillable = ['sentence', 'review','course_id', 'user_id'];
 
     // courseへのリレーション
     public function course() {
@@ -19,10 +20,13 @@ class Evaluation extends Model
     return $this->belongsTo(User::class);
 }
 
-    // 投稿日時ごとに並び変えるための関数getAllOrderByUpdated_at()
-  //   public static function getAllOrderByUpdated_at()
-  // {
-  //   return self::orderBy('created_at', 'desc')->get();
-  // }
+
+protected static function booted()
+{
+    static::creating(function ($evaluation) {
+        $evaluation->course_id = course_id;
+    });
+}
+
 }
 
