@@ -26,7 +26,7 @@ class EvaluationsController extends Controller
         return view("evaluations", compact('evaluations'));
     }
     
-    public function store(Request $request)
+    public function store(Request $request, $course_id)
     {
         $validator = Validator::make($request->all(), [
             'review' => ['required'],
@@ -42,7 +42,8 @@ class EvaluationsController extends Controller
             'sentence' => $request->input('sentence'),
             'review' => $request->input('review'),
             // 'course_id' => $request->input('course_id'),
-            'course_id' => $evaluations->('course_id'),
+            // 'course_id' => $evaluations->('course_id'),
+            'course_id' => $course_id,
             'user_id' => auth()->id(),
         ]);
     

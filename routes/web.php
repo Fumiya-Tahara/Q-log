@@ -33,7 +33,10 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 
 Route::get('/evaluation/{course_id}', [App\Http\Controllers\EvaluationsController::class, 'index'])->name('evaluation.index');
 
-Route::post('/evaluation/store', [App\Http\Controllers\EvaluationsController::class, 'store'])->name('evaluation.store');
+// Route::post('/evaluation/store', [App\Http\Controllers\EvaluationsController::class, 'store'])->name('evaluation.store');
+
+Route::post('/evaluation/{course_id}/store', [App\Http\Controllers\EvaluationsController::class, 'store'])->name('evaluation.store');
+
 
 Route::get('/course_register', [CourseRegisterController::class, 'index']);
 
