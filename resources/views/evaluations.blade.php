@@ -17,7 +17,7 @@
                             <tr>
                                 <th>
                                     <p>コメント:</p>
-                                    <textarea name="sentence" id="sentence" cols="150" rows="5" placeholder="評価を入力してください"></textarea>
+                                    <textarea name="sentence" id="sentence" cols="90" rows="5" placeholder="評価を入力してください"></textarea>
                         </th>
                             <tr>
                             <tr>
@@ -30,11 +30,18 @@
                     </div>
                     <button type="submit" class="btn btn-primary btn-lg">評価を投稿</button>
                 </form>
+                @if (session('flash_message'))
+                <div class="flash_message d-grid gap-2 d-md-flex justify-content-center">
+                    {{ session('flash_message') }}
+                </div>
+                @endif
               
             </div>
-            
+
     </form>
 </div>
+
+
 
             @foreach ($evaluations as $evaluation)
                 <div class="evaluation-container">

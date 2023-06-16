@@ -46,7 +46,8 @@ class EvaluationsController extends Controller
         ]);
         
     
-        return redirect()->route('evaluation.index', ['course_id' => $request->input('course_id')]);
+        // return redirect()->route('evaluation.index', ['course_id' => $request->input('course_id')]);
+        return redirect()->route('evaluation.index', ['course_id' => $request->input('course_id')])->with('flash_message', '投稿が完了しました');
 
     }
     
