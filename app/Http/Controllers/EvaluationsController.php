@@ -18,7 +18,6 @@ class EvaluationsController extends Controller
     public function index($id)
     {
         $course = Course::findOrFail($id);  
-        //忘れてた
         
         $evaluations = Evaluation::where($course->id)->get();
         // dd($evaluations);  
