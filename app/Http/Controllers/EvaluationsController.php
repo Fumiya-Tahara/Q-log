@@ -19,7 +19,7 @@ class EvaluationsController extends Controller
     {
         $course = Course::findOrFail($id);  
         
-        $evaluations = Evaluation::where($course->id)->get();
+        $evaluations = Evaluation::where('course_id', $course->id)->get();
         // dd($evaluations);  
     
         return view("evaluations", compact('evaluations','course'));

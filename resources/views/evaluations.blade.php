@@ -45,7 +45,7 @@
                                         <th scope="row">ユーザー名</th>
                                         <td>
                                             <div class="evaluation" id="user_name">
-                                                ユーザー名: {{ $evaluations->user->name }}
+                                                ユーザー名: {{ $evaluation->user->name }}
                                             </div>
                                         </td>
                                     </tr>
@@ -53,7 +53,7 @@
                                         <th scope="row">コメント</th>
                                         <td>
                                             <div class="evaluation" id="sentence">
-                                                {{ $evaluations-> sentence}}
+                                                {{ $evaluation-> sentence}}
                                             </div>
                                         </td>
                                         
@@ -62,7 +62,7 @@
                                         <th scope="row">評価</th>
                                         <td>
                                             <div class="evaluation" id="review">
-                                                {{ $evaluations-> review}}
+                                                {{ $evaluation-> review}}
                                             </div>
                                         </td>
                                         
@@ -72,7 +72,7 @@
                                         <th scope="row">投稿時間</th>
                                         <td>
                                             <div class="evaluation" id="created_at">
-                                                投稿日時:{{ $evaluations->created_at->format('Y-m-d H:i:s')}}
+                                                投稿日時:{{ $evaluation->created_at->format('Y-m-d H:i:s')}}
                                             </div>
                                         </td>
                                     </tr>
