@@ -30,11 +30,15 @@
                     </div>
                     <button type="submit" class="btn btn-primary btn-lg">評価を投稿</button>
                 </form>
+                {{-- 評価投稿した後のフラッシュメッセージです --}}
                 @if (session('flash_message'))
                 <div class="flash_message d-grid gap-2 d-md-flex justify-content-center">
                     {{ session('flash_message') }}
                 </div>
                 @endif
+
+
+
               
             </div>
 
