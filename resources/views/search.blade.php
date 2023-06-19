@@ -7,7 +7,6 @@
 @extends('layouts.app')
 
 @section('content')
-<p>検索結果</p>
 <table class="table">
   <thead>
     <tr>
@@ -38,22 +37,22 @@
       <td>@if (!$post->favorite)
         <form action="{{ route('Favorite.store', $post) }}" method="post">
             @csrf
-            <button>お気に入り登録</button>
+            <button  class="btn btn-outline-success">お気に入り登録</button>
         </form>
         @else
         <form action="{{ route('Favorite.destroy', $post) }}" method="post">
             @csrf
             @method('delete')
-            <button>お気に入り解除</button>
+            <button  class="btn btn-outline-danger">お気に入り解除</button>
         </form>
         @endif
       </td>
     </tr>
   @empty
-    <td>No posts!!</td>
+    <td>該当の授業はありません</td>
     
   @endforelse
   </tbody>
   {{ $posts->links() }}
-  <p><a class="tab-item{{ Request::is('favorite_courses') ? ' active' : ''}}" href="{{ route('favorites') }}">お気に入り</a></p>
-@endsection
+  <p ><a class="link-primary" class="tab-item{{ Request::is('favorite_courses') ? ' active' : ''}}" href="{{ route('favorites') }}">お気に入り一覧</a></p>
+@endsection 

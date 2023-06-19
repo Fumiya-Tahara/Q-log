@@ -50,7 +50,7 @@
                             @endif
                         @else
                             <li class="nav-item my-auto">
-                                <a class="nav-link" href="#">授業一覧</a>
+                                <a class="nav-link" href="courses">授業一覧</a>
                             </li>
                             <li class="nav-item my-auto">
                                 <a class="nav-link" href="#">新規授業登録</a>

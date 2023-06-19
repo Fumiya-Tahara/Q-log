@@ -24,7 +24,7 @@ class FavoriteController extends Controller
         if ($user->is_favorite($courseId)) {
             $user->favorite_courses()->detach($courseId);
             $course =Course::find($courseId);
-            $course->favorite = true;
+            $course->favorite = false;
             $course->save();
         }
         return back();

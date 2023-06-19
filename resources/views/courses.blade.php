@@ -10,9 +10,11 @@
 @extends('layouts.app')
 
 @section('content')
+<p ><a class="link-primary" class="tab-item{{ Request::is('favorite_courses') ? ' active' : ''}}" href="{{ route('favorites') }}">お気に入り一覧</a></p>
 <!-- //* 検索機能ここから *// -->
 <div>
   <form action="{{ route('posts.index') }}" method="GET">
+  @csrf
     <input type="text" name="keyword" value="{{ $keyword }}">
     <input type="submit" value="検索">
   </form>
@@ -26,18 +28,60 @@
   </h1>
   <div class="collapse" id="kikan">
   <ul>
-  <li type="button" class="btn btn-secondary">言語文化科目</li>
-  <li type="button" class="btn btn-secondary">文系ディシプリン科目</li>
-  <li type="button" class="btn btn-secondary">理系ディシプリン科目</li>
-  <li type="button" class="btn btn-secondary">サイバーセキュリティ科目</li>
-  <li type="button" class="btn btn-secondary">健康・スポーツ科目</li>
-  <li type="button" class="btn btn-secondary">総合科目</li>
-  <li type="button" class="btn btn-secondary">高年次基幹教育科目</li>
+  <li>
+    <form action="{{ route('posts.index') }}" method="GET">
+    @csrf
+    <input type="hidden" name="keyword" value="言語文化科目">
+    <input class="btn btn-secondary" type="submit" value="言語文化科目">
+    </form>
+  </li>
+  <li>
+    <form action="{{ route('posts.index') }}" method="GET">
+    @csrf
+    <input type="hidden" name="keyword" value="文系ディシプリン科目">
+    <input class="btn btn-secondary" type="submit" value="文系ディシプリン科目">
+    </form>
+  </li>
+  <li>
+    <form action="{{ route('posts.index') }}" method="GET">
+    @csrf
+    <input type="hidden" name="keyword" value="理系ディシプリン">
+    <input class="btn btn-secondary" type="submit" value="理系ディシプリン">
+    </form>
+  </li>
+  <li>
+    <form action="{{ route('posts.index') }}" method="GET">
+    @csrf
+    <input type="hidden" name="keyword" value="サイバーセキュリティ科目">
+    <input class="btn btn-secondary" type="submit" value="サイバーセキュリティ科目">
+    </form>
+  </li>
+  <li>
+    <form action="{{ route('posts.index') }}" method="GET">
+    @csrf
+    <input type="hidden" name="keyword" value="健康・スポーツ科目">
+    <input class="btn btn-secondary" type="submit" value="健康・スポーツ科目">
+    </form>
+  </li>
+  <li>
+    <form action="{{ route('posts.index') }}" method="GET">
+    @csrf
+    <input type="hidden" name="keyword" value="総合科目">
+    <input class="btn btn-secondary" type="submit" value="総合科目">
+    </form>
+  </li>
+  <li>
+    <form action="{{ route('posts.index') }}" method="GET">
+    @csrf
+    <input type="hidden" name="keyword" value="高年次基幹教育科目">
+    <input class="btn btn-secondary" type="submit" value="高年次基幹教育科目">
+    </form>
+  </li>
   </ul>
   </div>
 </div>
 <div>
-  <h1 class="btn btn-primary" type="button" data-toggle="collapse" data-target="#kikan" aria-expanded="false" aria-controls="collapseExample">
+  <h1 class="btn btn-primary" type="button" data-toggle="collapse" data-target="  " aria-expanded="false" aria-controls="collapseExample">
     専攻教育
   </h1>
 </dev>
