@@ -18,5 +18,7 @@ class Course extends Model
         'faculty',
         'year',
         'term',
+        'subject',
+        'favorite',
     ];
 }

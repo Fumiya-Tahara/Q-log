@@ -23,7 +23,7 @@ class CoursesSeeder extends Seeder
             'year' => 2022, 
             'term' => '前期', 
             'subject' =>'理系ディシプリン',
-            'favorite' => true
+            'favorite' => false
             
         ]);
         Course::create([
@@ -48,7 +48,7 @@ class CoursesSeeder extends Seeder
             'year' => 2022, 
             'term' => '前期', 
             'subject' =>'理系ディシプリン',
-            'favorite' => true
+            'favorite' => false
         ]);
     }
 }
